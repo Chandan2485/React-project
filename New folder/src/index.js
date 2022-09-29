@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { ColorRondam } from './Component/ColorRondam/ColorRondam';
+import {Filter} from './Component/filter/Filter'
 import reportWebVitals from './reportWebVitals';
 
 
@@ -8,7 +8,7 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ColorRondam/>
+  <Filter/>
   </React.StrictMode>
 );
 
