@@ -11,10 +11,8 @@ export function Colorchange() {
     
       return (
         <>
-         <div style={{color:color[count],fontSize:'40px'}}>
-         <button onClick={add}>Add</button>
-         </div>
-      
+         <p style={{color:color[count],fontSize:'40px'}}>123456789</p>
+        <button onClick={add}>Add</button>
         </>
        
       );
