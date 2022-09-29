@@ -17,8 +17,8 @@ export function Filter(){
  const handlechange=(allData1,idata)=>{
     
     const fildata=allData1.filter((com)=>{
-        com.name==idata
-        // console.log(com)
+        
+        return 
     })
 
     // setfilterData(fildata)
