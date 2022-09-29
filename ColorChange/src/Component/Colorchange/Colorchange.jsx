@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import './Colorchange.css'
+
 
 export function Colorchange() {
     const [count, setcount]=useState(0)
@@ -11,7 +13,7 @@ export function Colorchange() {
     
       return (
         <>
-         <div style={{color:color[count],fontSize:'40px'}}>
+         <div style={{backgroundColor:color[count]}}>
          <button onClick={add}>Add</button>
          </div>
       
