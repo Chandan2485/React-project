@@ -14,15 +14,20 @@ export function Filter(){
         console.log(allData)
     },[]);
  
- const handlechange=(allData1,idata)=>{
+ const handlechange=()=>{
     
-    const fildata=allData1.filter((com)=>{
+    const fildata=allData.map((com)=>{
         
-        return 
+        if((com.name).includes(inputData)){
+            console.log(com)
+            return com
+           
+        }
     })
-
+    // console.log(fildata)
     // setfilterData(fildata)
-    console.log(fildata)
+    // console.log(filterData)
+    
  }
 
 
@@ -34,7 +39,7 @@ export function Filter(){
             value={inputData}
             onChange={(e) =>{
                 setinputData(e.target.value)
-                handlechange(allData,inputData)
+                handlechange()
             }}
             
             />
