@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.data_div div{
+    border: 1px solid black;
+    width: 250px;
+    padding: 20px 0;
+    text-align: center;
+}
+.data_div div h1{
+margin-bottom: 10px;
+}
