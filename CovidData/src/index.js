@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { Covid } from './Component/Covid';
 // import './index.css';
 // import {App} from './App';
-import {CovidData} from './Component/CovidData'
+// import {CovidData} from './Component/CovidData'
 
 
 import reportWebVitals from './reportWebVitals';
@@ -13,7 +14,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/* <App /> */}
-    <CovidData/>
+    {/* <CovidData/> */}
+    <Covid/>
   
   </React.StrictMode>
 );
