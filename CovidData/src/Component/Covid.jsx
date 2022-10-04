@@ -40,10 +40,10 @@ export function Covid() {
           onChange={(e) => setInput(e.target.value)}
         />
         <select name="" id="select" onChange={(e) => setinputType(e.target.value)}>
-          <option value="state">state</option>
-          <option value="date">date</option>
+          <option value="state">State</option>
+          <option value="date">Date</option>
         </select>
-        <button onClick={clickevent}>click</button>
+        <button onClick={clickevent}>Click</button>
       </div>
 
 
