@@ -2,13 +2,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* background-image: url("C:/Users/DELL/Desktop/reactProject/CovidData/public/pic/corona.jpg");
-    background-size: cover; */
 }
 
 .main{
     background-image: url("C:/Users/DELL/Desktop/reactProject/CovidData/public/pic/corona.jpg");
-    /* background-size: cover; */
    padding-bottom: 10px;
 }
 

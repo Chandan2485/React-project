@@ -73,7 +73,7 @@ export function Covid() {
           )
         ) : (
           <div>
-            {/* <img src="./pic/corona.jpg" alt="" /> */}
+            <img src="./pic/corona.jpg" alt="" />
           </div>
         )}
       </div>
