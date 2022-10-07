@@ -14,3 +14,15 @@
   flex-direction: column;
   gap: 20px;
 }
+
+.new div input{
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 3px;
+}
+.new div button{
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 3px;
+    cursor: pointer;
+}

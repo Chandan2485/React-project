@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Loging } from './Component/Loging';
-import { New } from './Component/New';
+// import { New } from './Component/New';
 // import './index.css';
 // import {App} from './App';
 
