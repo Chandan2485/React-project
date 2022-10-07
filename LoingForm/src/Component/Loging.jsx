@@ -11,7 +11,7 @@ export function Loging() {
   const [logingPage, setLogingPage] = useState(true);
   const [userName,setUserName]=useState('')
   const [userPass,setUserPass]=useState('')
- const [storage, setStorage] = useState([]);
+  const [storage, setStorage] = useState([]);
   const [loguserName,setLogUserName]=useState('')
   const [loguserPass,setLogUserPass]=useState('')
  
@@ -22,12 +22,43 @@ const page=()=>{
 }
 
 const logpag=()=>{
-    setLogingPage(false)
+    let data=JSON.parse(localStorage.getItem("storage"))
+    data.forEach(element => {
+        if( element.UserNme===loguserName && element.pass===loguserPass){
+            setLogingPage(false)
+
+        }
+    });
+    setLogUserName('')
+    setLogUserPass('')
 }
 
 const Register=()=>{
-  let k=localStorage.getItem("storage")
-  console.log(k)
+  let data=JSON.parse(localStorage.getItem("storage"))
+   let flag=0
+  if(userName.length>3 && userPass>3){
+    data.forEach(element => {
+        if( element.UserNme===userName){
+            flag++
+        }
+    });
+
+    if(!flag){
+        data.push({
+            UserNme:userName,
+            pass:userPass
+        })
+        localStorage.setItem('storage',JSON.stringify(data))
+        alert('Register successfully')
+    }else{
+        alert('Already Register')
+    }
+  }
+  else{
+    alert('invlaid username or password')
+  }
+setUserName('')
+setUserPass('')
 }
 
 useEffect (()=>{
