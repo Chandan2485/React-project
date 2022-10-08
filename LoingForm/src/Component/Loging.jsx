@@ -19,16 +19,18 @@ export function Loging() {
 
 const page=()=>{
     setLogingPage(true)
+    setStorage([])
 }
 
-const logpag=()=>{
+const loginpage=()=>{
     let data=JSON.parse(localStorage.getItem("storage"))
     data.forEach(element => {
         if( element.UserNme===loguserName && element.pass===loguserPass){
             setLogingPage(false)
-
+            setStorage(element)
         }
     });
+
     setLogUserName('')
     setLogUserPass('')
 }
@@ -36,7 +38,7 @@ const logpag=()=>{
 const Register=()=>{
   let data=JSON.parse(localStorage.getItem("storage"))
    let flag=0
-  if(userName.length>3 && userPass>3){
+  if(userName.length>3 && userPass.length>3){
     data.forEach(element => {
         if( element.UserNme===userName){
             flag++
@@ -69,33 +71,34 @@ useEffect (()=>{
 
   return (
     <>
+    <main>
+
+   
       <div className="header">
         <div>
-          <h1>React Loging</h1>
+          <h1>React Login</h1>
         </div>
 
         <div>
           {logingPage ? (
             <div>
-              <button>Loging</button>
+              <button>Login</button>
               <button>New</button>
             </div>
           ) : (
             <div>
-              <span>CHANDAN</span>
+              <span>{storage.UserNme}</span>
               <button onClick={page}>Logout</button>
             </div>
           )}
         </div>
       </div>
 
-
-
       {
         logingPage?(
             <div className="new">
             <div>
-                <h2>Loging</h2>
+                <h2>Login</h2>
                 <input type="text" 
                  onChange={(e)=>setLogUserName(e.target.value)}
                  value={loguserName}
@@ -104,7 +107,7 @@ useEffect (()=>{
                  onChange={(e)=>setLogUserPass(e.target.value)}
                  value={loguserPass}
                 />
-                <button  onClick={logpag} >Loging</button>
+                <button  onClick={loginpage} >Login</button>
             </div>
             <div>
                 <h2>Register</h2>
@@ -119,9 +122,18 @@ useEffect (()=>{
                 <button onClick={Register}>Register</button>
             </div>
           </div>
-         ):(<p>loging successfull</p>)
+         ):(<div className="logsucc"><h1>loging successfull</h1></div>)
       } 
-      
+
+
+
+      <div className="footer">
+        <h2>Login Form @2022</h2>
+      </div>
+
+
+
+      </main>
     </>
   );
 }

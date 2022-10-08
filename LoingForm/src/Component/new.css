@@ -1,9 +1,13 @@
 .new{
-    margin-top: 3rem;
     display: flex;
     justify-content: space-around;
 }
-
+main{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
 
 .new div {
@@ -25,4 +29,14 @@
     font-weight: bold;
     padding: 3px;
     cursor: pointer;
+}
+
+.footer{
+   background-color: blueviolet;
+   color: blanchedalmond;
+   text-align: center;
+   padding: 1rem 0;
+}
+.logsucc{
+    text-align: center;
 }
