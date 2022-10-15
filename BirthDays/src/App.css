@@ -1,0 +1,105 @@
+.parent-container{
+display: flex;
+justify-content: center;
+align-items: center;
+margin: 4rem 0;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(207, 146, 146);
+  
+  border-radius: 10px;
+  width: 40%;
+  height: 10%;
+  background-color: lightgreen;
+}
+.container h2{
+  text-align: center;
+}
+.content{
+   margin: 3rem 3rem;
+   /* display: flex; */
+
+ }
+ .SectOne{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+ }
+ .buttonTwo{
+  padding: 6px;
+  height: 26px;
+  width: 50px;
+  text-align: center;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  background-color: tomato;
+  border: none;
+  border-radius: 16px;
+  color: aliceblue;
+}
+.buttonThree{
+  padding: 6px;
+  height: 26px;
+  width: 54px;
+  text-align: center;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  background-color:rgb(126, 126, 220);
+  border: none;
+  border-radius: 16px;
+  color:wheat;
+}
+.content .images{
+ margin-left: 55px; 
+ width: 75px;
+ height: 75px;
+ object-fit: cover;
+ border-radius: 50%;
+}
+ul{
+  list-style: none;
+  display: flex;
+  /* flex-direction: column; */
+  margin-left: 1px;
+}
+ul li{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size:medium;
+  color: slateblue;
+}
+.button{
+  border: none;
+  border-radius: 5rem;
+  width: 20rem;
+  padding: 1rem;
+  margin: 3rem auto;
+  background-color:royalblue;
+  font-size: larger;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: white;
+}
+.details{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid white;
+  border-radius: 11px;
+  background-color: turquoise;
+  margin: 5px 80px;
+}
+.justDetail {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+@media (max-width:650px) {
+    .container{
+      align-items: center;
+
+    }
+    .button{
+      width: 5rem;
+    }
+}
