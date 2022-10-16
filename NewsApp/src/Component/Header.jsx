@@ -3,13 +3,13 @@ import "./Header.css"
 
 export function Header() {
     return(
-        <div>
+        <>
        <div className="header">
         <div className="logo">NewsApp</div>
         <div className="menu">
-             <a >Home</a>
-            <a >About</a>
-            <a >Contact</a>
+            <a>Home</a>
+            <a>About</a>
+            <a>Contact</a>
         </div>
         <div className="ModeChange">
             <input type="text" />
@@ -17,6 +17,6 @@ export function Header() {
             <i className="fa-regular fa-moon"></i>
         </div>
        </div>
-       </div>
+       </>
     );
 }

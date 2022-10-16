@@ -16,7 +16,7 @@ export function Footer (){
             <i className="fa-solid fa-copyright">Copyright 2022-23</i>
             </div>
             <div className="date">
-              <p className="date">{date}</p>
+              <p>{date}</p>
             </div>
             <div className="social">
             <i className="fa-brands fa-facebook"></i>

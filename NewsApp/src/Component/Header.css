@@ -4,9 +4,25 @@
     box-sizing: border-box;
 }
 .header{
+height: 10vh;
+/* width: 100%; */
 display: flex;
-justify-content: space-around
+justify-content: space-around;
+align-items: center;
+background-color: aqua;
+position: sticky;
+top: 0;
 }
 /* .search{
     text-align: center;
 } */
+.logo{
+    font-size: 2rem;
+    font-weight: bold;
+}
+.menu a{
+/* border: 1px solid black; */
+cursor: pointer;
+padding: 4px 9px;
+margin:0 0.5rem;
+}

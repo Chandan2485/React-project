@@ -1,4 +1,35 @@
 .footer{
+    padding: 0 100px;
+    height: 10vh;
+    margin: auto;
     display: flex;
-    justify-content: space-around
-    }
+    justify-content: space-between;
+    align-items: center;
+    background-color: aqua;
+ }
+.social i{
+  font-size: 2rem;
+  margin: 0 0.4rem;
+  cursor: pointer;
+}
+.fa-facebook, .fa-twitter{
+    color: blue;
+}
+.fa-youtube{
+    color: red;
+}
+.fa-square-whatsapp{
+    color:  green;
+}
+.fa-linkedin{
+    color: rgb(10, 80, 150);
+}
+.fa-instagram{
+    color: white;
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+    /* border-radius: 0.5rem; */
+}
+.date p{
+    font-size: 1.25rem;
+    font-weight: bold;
+}
