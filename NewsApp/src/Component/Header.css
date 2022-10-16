@@ -26,3 +26,30 @@ cursor: pointer;
 padding: 4px 9px;
 margin:0 0.5rem;
 }
+.ModeChange{
+  
+    display: flex;
+    justify-content: center;
+}
+.fa-moon{
+    cursor: pointer;
+    margin-left: 2rem;
+    font-size: 1.5rem;
+}
+
+.ModeChange input{
+    font-size: 1rem;
+    padding: 0.2rem;
+    outline: none;
+    border: none;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+.SearchBtn {
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0.2rem 0.5rem;
+    border: none;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+}
