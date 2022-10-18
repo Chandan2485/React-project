@@ -1,22 +1,14 @@
 import './Home.css'
-import React,{useState,useEffect} from "react";
-const axios = require("axios").default;
+import React,{useContext} from "react";
+import { NewsStateContext } from '../Context/NewsContext';
 
 
 export function Home(){
 
-const [news,setNews]=useState([])
 
+const {news}=useContext(NewsStateContext)
 
-useEffect(() => {
-    axios
-    .get("https://newsapi.org/v2/everything?q=cricket&from=2022-09-16&sortBy=publishedAt&apiKey=01b3f8cd150547d2943473a3d9e12497")
-    .then((res) => {
-     console.log(res.data.articles)
-    setNews(res.data.articles)
-    });
-  },[]);
-
+// console.log(news)
     return(
         <div className='allNews'>
             {news.map((data)=>{
@@ -29,6 +21,10 @@ useEffect(() => {
                     </div>
                     <h2>{data.title}</h2>
                     <p>{data.content}<span><a href={data.url}>more</a></span></p>
+                    <div className='icon'>
+                    <i class="fa-regular fa-thumbs-up"></i>
+                    <i class="fa-regular fa-comment"></i>
+                    </div>
                 </div>
             })}
         </div>
