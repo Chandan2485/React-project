@@ -7,6 +7,7 @@ import { Header } from './Component/Header';
 import { Home } from './Component/Home';
 import { Route, Routes } from 'react-router-dom';
 import { NewsStateProvider } from './Context/NewsContext'
+import { Details } from './Component/Details';
 // import 
 
 export function App() {
@@ -19,6 +20,7 @@ export function App() {
       <Route path='/' element={<Home/>}/>
       <Route path='/About' element={<About/>}/>
       <Route path='/Contact' element={<Contact/>}/>
+      <Route path='/Details' element={<Details/>}/>
      </Routes>
      <Footer/>
      </NewsStateProvider>
