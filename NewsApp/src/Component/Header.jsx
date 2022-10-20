@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 import { NewsStateContext } from '../Context/NewsContext';
 
 export function Header() {
-    const {changeMode,mode}=useContext(NewsStateContext)
+    const {changeMode,mode,searchChange,searchValue}=useContext(NewsStateContext)
     return(
         <>
        <div className="header">
@@ -15,9 +15,11 @@ export function Header() {
             <Link to={'/Contact'}>Contact</Link>
         </div>
         <div className="ModeChange">
-            <input type="text" />
+            <input type="text" 
+            value={searchValue}
+            onChange={(e)=>{searchChange(e)}}
+            />
             <button className="SearchBtn"><i className="fa-solid fa-magnifying-glass"></i></button>
-            {/* <i className="fa-regular fa-moon" id={mode? ("Active"):("")} onClick={changeMode}></i> */}
             <i class="fa-solid fa-moon" id={mode? ("Active"):("")} onClick={changeMode}></i>
         </div>
        </div>

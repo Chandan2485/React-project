@@ -10,6 +10,7 @@ function NewsStateProvider (propes){
     const [detailsNews,setDetailsNews]=useState({})
     const [commentDeta, SetcommentDeta]=useState({})
     const [mode,setMode]=useState(false)
+    const [searchValue,setSearchValue]=useState("")
 
 
     const navigate=useNavigate()
@@ -75,9 +76,17 @@ const changeMode=()=>{
   setMode(!mode)
 }
 
+const searchChange=(e)=>{
+  setSearchValue(e.target.value)
+console.log(searchValue)
+}
+
+const handleSearch=()=>{
+  
+}
 
     return(
-        <NewsStateContext.Provider value={{news,detailspage,detailsNews,remove,likebtn,handelComment,addComment,changeMode,mode}}>
+        <NewsStateContext.Provider value={{news,detailspage,detailsNews,remove,likebtn,handelComment,addComment,changeMode,mode,searchValue,searchChange,handleSearch}}>
         {propes.children}
         </NewsStateContext.Provider>
     );
