@@ -20,7 +20,7 @@ function NewsStateProvider (propes){
     axios
     .get("https://newsapi.org/v2/everything?q=tesla&from=2022-09-19&sortBy=publishedAt&apiKey=01b3f8cd150547d2943473a3d9e12497")
     .then((res) => {
-    //  console.log(res.data.articles)
+     console.log(res.data.articles)
     let ans=[]
     res.data.articles.forEach((i,index)=>{
      ans.push({...i,like:Math.floor(Math.random()*1000),Comment:[],unique:index})
@@ -78,11 +78,21 @@ const changeMode=()=>{
 
 const searchChange=(e)=>{
   setSearchValue(e.target.value)
-console.log(searchValue)
+// console.log(searchValue)
 }
 
 const handleSearch=()=>{
-  
+  axios
+  .get(`https://newsapi.org/v2/everything?q=${searchValue}&from=2022-09-19&sortBy=publishedAt&apiKey=01b3f8cd150547d2943473a3d9e12497`)
+  .then((res) => {
+   console.log(res.data.articles)
+  let ans=[]
+  res.data.articles.forEach((i,index)=>{
+   ans.push({...i,like:Math.floor(Math.random()*1000),Comment:[],unique:index})
+  })
+  setNews(ans)
+  });
+  setSearchValue('')
 }
 
     return(
