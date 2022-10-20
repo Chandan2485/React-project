@@ -9,6 +9,7 @@ function NewsStateProvider (propes){
     const [news,setNews]=useState([])
     const [detailsNews,setDetailsNews]=useState({})
     const [commentDeta, SetcommentDeta]=useState({})
+    const [mode,setMode]=useState(false)
 
 
     const navigate=useNavigate()
@@ -70,9 +71,13 @@ const addComment=(id)=>{
 }
 
 
+const changeMode=()=>{
+  setMode(!mode)
+}
+
 
     return(
-        <NewsStateContext.Provider value={{news,detailspage,detailsNews,remove,likebtn,handelComment,addComment}}>
+        <NewsStateContext.Provider value={{news,detailspage,detailsNews,remove,likebtn,handelComment,addComment,changeMode,mode}}>
         {propes.children}
         </NewsStateContext.Provider>
     );

@@ -6,13 +6,14 @@ import { NewsStateContext } from '../Context/NewsContext';
 export function Home(){
 
 
-const {news,detailspage,remove,likebtn}=useContext(NewsStateContext)
+const {news,detailspage,remove,likebtn, mode}=useContext(NewsStateContext)
 
 // console.log(news)
     return(
+        <div id={mode? ("Active"):("")}>
         <div className='allNews'>
             {news.map((data)=>{
-                return <div className="news" key={data.urlToImage}>
+                return <div className="news" key={data.unique}>
                     <div className='imgdiv'>
                         <img src={data.urlToImage} alt="" />
                     </div>
@@ -25,6 +26,7 @@ const {news,detailspage,remove,likebtn}=useContext(NewsStateContext)
                     </div>
                 </div>
             })}
+        </div>
         </div>
     );
 }

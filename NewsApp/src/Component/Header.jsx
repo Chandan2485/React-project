@@ -1,8 +1,10 @@
-import React from "react";
+import React,{useContext} from "react";
 import "./Header.css"
 import {Link} from 'react-router-dom'
+import { NewsStateContext } from '../Context/NewsContext';
 
 export function Header() {
+    const {changeMode,mode}=useContext(NewsStateContext)
     return(
         <>
        <div className="header">
@@ -15,7 +17,8 @@ export function Header() {
         <div className="ModeChange">
             <input type="text" />
             <button className="SearchBtn"><i className="fa-solid fa-magnifying-glass"></i></button>
-            <i className="fa-regular fa-moon"></i>
+            {/* <i className="fa-regular fa-moon" id={mode? ("Active"):("")} onClick={changeMode}></i> */}
+            <i class="fa-solid fa-moon" id={mode? ("Active"):("")} onClick={changeMode}></i>
         </div>
        </div>
        </>

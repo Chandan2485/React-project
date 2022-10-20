@@ -6,7 +6,8 @@ import './Details.css'
 
 export function Details(){
 
-    const {detailsNews,handelComment,addComment}=useContext(NewsStateContext)
+    const {detailsNews,handelComment,addComment,mode}=useContext(NewsStateContext)
+    console.log(mode)
 
     const content=(xyz)=>{
         let contents="";
@@ -20,7 +21,8 @@ export function Details(){
   
 
     return(
-        <div className="detailsNews">
+    <div id={mode? ("Active"):("")}>
+        <div className= "detailsNews">
              <div className="detailsNews_img">
              <img src={detailsNews.urlToImage} alt="" />
              </div>
@@ -36,6 +38,7 @@ export function Details(){
                 <div><button onClick={()=>{addComment(detailsNews.unique)}}>Comment</button></div>
              </div>
              <div className="commentBlock">
+                <p>Comments : {detailsNews.Comment.length}</p>
                 {
                     detailsNews.Comment?.map((com)=>{
                         return (
@@ -45,6 +48,6 @@ export function Details(){
                 }
              </div>
         </div>
-       
+        </div>
     );
 }
