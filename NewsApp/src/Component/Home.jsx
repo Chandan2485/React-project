@@ -6,7 +6,7 @@ import { NewsStateContext } from '../Context/NewsContext';
 export function Home(){
 
 
-const {news,detailspage,remove,likebtn, mode}=useContext(NewsStateContext)
+const {news,detailspage,remove,likebtn, mode,readLater}=useContext(NewsStateContext)
 
 // console.log(news)
     return(
@@ -22,7 +22,7 @@ const {news,detailspage,remove,likebtn, mode}=useContext(NewsStateContext)
                     <div className='icon'>
                     <i class="fa-regular fa-thumbs-up"  onClick={()=>likebtn(data.unique,data)}><span>{data.like}</span></i>
                     <i class="fa-solid fa-trash"  onClick={()=>remove(data.unique,data)}></i>
-                    <i class="fa-regular fa-bookmark"></i>
+                    <i class="fa-regular fa-bookmark" onClick={()=>readLater(data)}></i>
                     <i class="fa-regular fa-comment" onClick={()=>detailspage(data)}><span>{data.Comment.length}</span></i>
                     </div>
                 </div>

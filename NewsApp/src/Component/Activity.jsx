@@ -5,12 +5,12 @@ import { Show } from './Show';
 
 export function Activity(){
 
-const {activitys}=useContext(NewsStateContext)
+const {activitys,mode}=useContext(NewsStateContext)
 
 // console.log(activitys.removeNews)
 
     return(
-    <div>
+    <div id={mode? ("Active"):("")}>
           <h1>Remove Item</h1>
     <div className='RenoveItemBox'>
        {
@@ -28,6 +28,18 @@ const {activitys}=useContext(NewsStateContext)
         })
        }
     </div>
+
+    <h1>Read Later Item</h1>
+    <div className='RenoveItemBox'>
+     
+       {
+        activitys.ReadLater?.map((item)=>{
+            return  <Show img={item.urlToImage} author={item.author} title={item.title} content={item.content} unique={item.unique} url={item.url}/>
+        })
+       }
+    </div>
+
+
     </div>
   
         

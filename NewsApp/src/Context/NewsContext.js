@@ -14,6 +14,7 @@ function NewsStateProvider (propes){
     const [activitys,setactivitys]=useState({
       'likeNews':[],
       'removeNews':[],
+      "ReadLater":[]
     })
 
 
@@ -109,8 +110,16 @@ const handleSearch=()=>{
   setSearchValue('')
 }
 
+const readLater=(item)=>{
+// console.log(item)
+let readLateritem=activitys.ReadLater
+readLateritem.push(item)
+setactivitys({...activitys,ReadLater:readLateritem})
+}
+
+
     return(
-        <NewsStateContext.Provider value={{news,detailspage,detailsNews,remove,likebtn,handelComment,addComment,changeMode,mode,searchValue,searchChange,handleSearch,activitys}}>
+        <NewsStateContext.Provider value={{readLater,news,detailspage,detailsNews,remove,likebtn,handelComment,addComment,changeMode,mode,searchValue,searchChange,handleSearch,activitys}}>
         {propes.children}
         </NewsStateContext.Provider>
     );
