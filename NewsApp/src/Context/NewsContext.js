@@ -11,6 +11,11 @@ function NewsStateProvider (propes){
     const [commentDeta, SetcommentDeta]=useState({})
     const [mode,setMode]=useState(false)
     const [searchValue,setSearchValue]=useState("")
+    const [activitys,setactivitys]=useState({
+      'likeNews':[],
+      'removeNews':[],
+    })
+
 
 
     const navigate=useNavigate()
@@ -18,9 +23,9 @@ function NewsStateProvider (propes){
 
  useEffect(() => {
     axios
-    .get("https://newsapi.org/v2/everything?q=tesla&from=2022-09-19&sortBy=publishedAt&apiKey=01b3f8cd150547d2943473a3d9e12497")
+    .get(" https://newsapi.org/v2/everything?q=tesla&from=2022-09-20&sortBy=publishedAt&apiKey=01b3f8cd150547d2943473a3d9e12497")
     .then((res) => {
-     console.log(res.data.articles)
+    //  console.log(res.data.articles)
     let ans=[]
     res.data.articles.forEach((i,index)=>{
      ans.push({...i,like:Math.floor(Math.random()*1000),Comment:[],unique:index})
@@ -38,20 +43,28 @@ function NewsStateProvider (propes){
 
   }
 
-const remove=(id)=>{
+const remove=(id,item)=>{
 // console.log(id)
 let afterRemove=news.filter((x)=>{
   return x.unique!==id
 })
 setNews(afterRemove)
-  }
+let removeItem=activitys.removeNews
+removeItem.push(item)
+setactivitys({...activitys,removeNews:removeItem})
+// console.log(activitys)
+}
   
- const likebtn=(id)=>{
-  console.log(id)
+ const likebtn=(id,item)=>{
+  // console.log(item)
   let afterlike=news.map((x)=>{
     return (x.unique===id)? {...x,like:x.like+1}:x
   })
   setNews(afterlike)
+  let likeItem=activitys.likeNews
+  likeItem.push(item)
+  setactivitys({...activitys,likeNews:likeItem})
+  // console.log(activitys.likeNews)
  }
 
 const handelComment=(e)=>{
@@ -67,7 +80,7 @@ const addComment=(id)=>{
   setDetailsNews({...detailsNews,Comment:comArr})
   // console.log(detailsNews.Comment)
   // SetcommentDeta({})
-  console.log(detailsNews)
+  // console.log(detailsNews)
   // console.log(id)
 }
 
@@ -83,20 +96,21 @@ const searchChange=(e)=>{
 
 const handleSearch=()=>{
   axios
-  .get(`https://newsapi.org/v2/everything?q=${searchValue}&from=2022-09-19&sortBy=publishedAt&apiKey=01b3f8cd150547d2943473a3d9e12497`)
+  .get(`https://newsapi.org/v2/everything?q=${searchValue}&from=2022-09-20&sortBy=publishedAt&apiKey=01b3f8cd150547d2943473a3d9e12497`)
   .then((res) => {
-   console.log(res.data.articles)
+  //  console.log(res.data.articles)
   let ans=[]
   res.data.articles.forEach((i,index)=>{
    ans.push({...i,like:Math.floor(Math.random()*1000),Comment:[],unique:index})
   })
   setNews(ans)
+  // console.log(news)
   });
   setSearchValue('')
 }
 
     return(
-        <NewsStateContext.Provider value={{news,detailspage,detailsNews,remove,likebtn,handelComment,addComment,changeMode,mode,searchValue,searchChange,handleSearch}}>
+        <NewsStateContext.Provider value={{news,detailspage,detailsNews,remove,likebtn,handelComment,addComment,changeMode,mode,searchValue,searchChange,handleSearch,activitys}}>
         {propes.children}
         </NewsStateContext.Provider>
     );

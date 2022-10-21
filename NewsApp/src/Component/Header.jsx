@@ -13,6 +13,7 @@ export function Header() {
             <Link to={'/'}>Home</Link>
             <Link to={'/About'}>About</Link>
             <Link to={'/Contact'}>Contact</Link>
+            <Link to={'/Activity'}>Activity</Link>
         </div>
         <div className="ModeChange">
             <input type="text" 

@@ -20,8 +20,9 @@ const {news,detailspage,remove,likebtn, mode}=useContext(NewsStateContext)
                     <h2 onClick={()=>detailspage(data)}>{data.title}</h2>
                     <p >{data.content}</p>
                     <div className='icon'>
-                    <i class="fa-regular fa-thumbs-up"  onClick={()=>likebtn(data.unique)}><span>{data.like}</span></i>
-                    <i class="fa-solid fa-trash"  onClick={()=>remove(data.unique)}></i>
+                    <i class="fa-regular fa-thumbs-up"  onClick={()=>likebtn(data.unique,data)}><span>{data.like}</span></i>
+                    <i class="fa-solid fa-trash"  onClick={()=>remove(data.unique,data)}></i>
+                    <i class="fa-regular fa-bookmark"></i>
                     <i class="fa-regular fa-comment" onClick={()=>detailspage(data)}><span>{data.Comment.length}</span></i>
                     </div>
                 </div>
