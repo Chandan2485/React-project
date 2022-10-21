@@ -1,11 +1,33 @@
 .RenoveItemBox{
+    width: 75vw;
+    margin: auto;
     padding: 1rem 0;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 1rem;
 }
-.RenoveItemBox h1{
+/* .RenoveItemBox h1{
     margin: 0 0 1rem 0;
-}
+} */
 
 
 .RenoveItem div img{
-width: 400px;
+width: 100%;
+height: 200px;
+}
+.RenoveItem h2{
+    height: 53px;
+    line-height: 1.5rem;
+    margin: 0.5rem 0;
+    /* border: 1px solid black; */
+    overflow: hidden;
+}
+.author{
+    height: 20px;
+    /* border: 1px solid black; */
+}
+.contentActive{
+    height: 53px;
+    line-height: 1.5rem;
+    overflow: hidden;
 }

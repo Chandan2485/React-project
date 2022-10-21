@@ -11,20 +11,20 @@ const {activitys}=useContext(NewsStateContext)
 
     return(
     <div>
+          <h1>Remove Item</h1>
     <div className='RenoveItemBox'>
-        <h1>Remove Item</h1>
        {
         activitys.removeNews?.map((item)=>{
-            return  <Show img={item.urlToImage} author={item.author} title={item.title} content={item.content} unique={item.unique}/>
+            return  <Show img={item.urlToImage} author={item.author} title={item.title} content={item.content} unique={item.unique} url={item.url}/>
         })
        }
     </div>
-
+    <h1>Like Item</h1>
     <div className='RenoveItemBox'>
-        <h1>Like Item</h1>
+     
        {
         activitys.likeNews?.map((item)=>{
-            return  <Show img={item.urlToImage} author={item.author} title={item.title} content={item.content} unique={item.unique}/>
+            return  <Show img={item.urlToImage} author={item.author} title={item.title} content={item.content} unique={item.unique} url={item.url}/>
         })
        }
     </div>
