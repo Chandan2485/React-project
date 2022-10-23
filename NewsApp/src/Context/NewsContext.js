@@ -24,7 +24,7 @@ function NewsStateProvider (propes){
 
  useEffect(() => {
     axios
-    .get(" https://newsapi.org/v2/everything?q=tesla&from=2022-09-20&sortBy=publishedAt&apiKey=01b3f8cd150547d2943473a3d9e12497")
+    .get(" https://newsapi.org/v2/everything?q=tesla&from=2022-09-22&sortBy=publishedAt&apiKey=01b3f8cd150547d2943473a3d9e12497")
     .then((res) => {
     //  console.log(res.data.articles)
     let ans=[]
@@ -97,7 +97,7 @@ const searchChange=(e)=>{
 
 const handleSearch=()=>{
   axios
-  .get(`https://newsapi.org/v2/everything?q=${searchValue}&from=2022-09-20&sortBy=publishedAt&apiKey=01b3f8cd150547d2943473a3d9e12497`)
+  .get(`https://newsapi.org/v2/everything?q=${searchValue}&from=2022-09-22&sortBy=publishedAt&apiKey=01b3f8cd150547d2943473a3d9e12497`)
   .then((res) => {
   //  console.log(res.data.articles)
   let ans=[]
