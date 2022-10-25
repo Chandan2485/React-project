@@ -1,0 +1,13 @@
+*{
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+.heading{
+  position:sticky;
+  top: 0;
+  background-color: rgb(50, 112, 228);
+  height: 8vh;
+  text-align: center;
+}
